@@ -27,22 +27,25 @@ landscape example uses the older Windows system voice.
 |---|---|---|
 | [![URL shortener Short](docs/demo/url-shortener-short.gif)](docs/demo/url-shortener-short.mp4) | [![Binary search Short](docs/demo/binary-search-short.gif)](docs/demo/binary-search-short.mp4) | [![Cache Short](docs/demo/cache-short.gif)](docs/demo/cache-short.mp4) |
 
-Frames from each build (hook, concept, demo, recap):
-
-![URL shortener Short frames](docs/screenshots/url-shortener-short.png)
-![Binary search Short frames](docs/screenshots/binary-search-short.png)
-![Cache Short frames](docs/screenshots/cache-short.png)
-
 Long-form (1280x720, about 2.5 minutes): [![Binary search explainer](docs/demo/binary-search-explainer.gif)](docs/demo/binary-search-explainer.mp4)
 
-![Binary search explainer frames](docs/screenshots/binary-search-explainer.png)
+### Editing in YouTube Studio
+
+Recorded from a real Studio session with Playwright. Tags first: remove two tags to make room under the
+500 counter, type a new tag, watch the counter change. Then the description. These recordings stop
+before **Save**; the changes were undone and the page reloaded to confirm nothing was kept. In real use
+the skills save and then reload to read the value back (see `yt-studio`).
+
+| Tags | Description |
+|---|---|
+| ![Typing a tag in Studio](docs/demo/studio-tags-edit.gif) | ![Typing in the Studio description](docs/demo/studio-description-edit.gif) |
 
 ### Tested
 
 Real output from the linter, the tag counter and the builder (storyboard lint, tag count against
 Studio's 500 limit, final build):
 
-![Test output](docs/screenshots/tests-output.png)
+![Test output](docs/demo/tests-output.gif)
 
 ## Quick start
 
