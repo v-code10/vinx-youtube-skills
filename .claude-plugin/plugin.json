@@ -4,5 +4,7 @@
   "version": "1.2.0",
   "author": { "name": "Vinx" },
   "license": "MIT",
-  "keywords": ["youtube", "shorts", "retention", "thumbnails", "titles", "content", "video", "seo"]
+  "homepage": "https://github.com/v-code10/vinx-youtube-skills",
+  "repository": "https://github.com/v-code10/vinx-youtube-skills",
+  "keywords": ["youtube", "youtube skills", "youtube seo", "youtube shorts", "claude code skills", "agent skills", "retention", "thumbnails", "titles", "tags", "content creator", "text to speech"]
 }

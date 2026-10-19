@@ -1,0 +1,64 @@
+{
+  "title": "Design a URL Shortener | System Design Interview Short",
+  "summary": "A classic system design interview question in under a minute: design a URL shortener. The core flow, how to generate short codes, and the one trap interviewers look for.",
+  "author": "Vinay Mishra",
+  "original_value": "Answers one interview question in a minute with a clear write path and read path, compares random codes with a counter plus base62, and ends with a three-point answer you can say out loud.",
+  "sources": [
+    "Common system design interview material on URL shorteners (key-value store, base62 encoding, redirect with HTTP 301 or 302)",
+    "Base62 uses the characters 0-9, a-z and A-Z; seven characters give 62 to the power 7 combinations, about 3.5 trillion"
+  ],
+  "hashtags": ["#shorts", "#systemdesign", "#interviewquestions", "#urlshortener", "#codinginterview"],
+  "voice": "Microsoft David Desktop",
+  "rate": 0,
+  "scenes": [
+    {
+      "role": "hook",
+      "sub": "Interview question",
+      "headline": "Design a URL shortener",
+      "narration": "Interviewer says: design a URL shortener. Do not panic. It is just two flows. Let me show you.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "concept",
+      "sub": "The two flows",
+      "headline": "Write and read",
+      "kind": "steps",
+      "items": ["Write: long URL in, short code out", "Store code and URL in a key-value store", "Read: code in, look up, redirect"],
+      "narration": "Write path: take the long URL, make a short code, store the pair. Read path: take the code, look it up, and redirect. Reads are far more common than writes.",
+      "bg": "#0e2a2f",
+      "accent": "#5eead4"
+    },
+    {
+      "role": "demo",
+      "sub": "Making the code",
+      "headline": "Where is the code from?",
+      "kind": "compare",
+      "left": {"title": "Random code", "items": ["Two URLs can collide", "Must check the database"]},
+      "right": {"title": "Counter plus base62", "items": ["Every ID is unique", "7 characters, 3.5 trillion codes"]},
+      "narration": "Making the code? Random strings can collide, so you must check the database. Better: a unique counter in base sixty-two. No collisions, and seven characters cover three and a half trillion codes.",
+      "bg": "#141a3a",
+      "accent": "#ff7a59"
+    },
+    {
+      "role": "mistake",
+      "sub": "The trap",
+      "headline": "One counter breaks",
+      "kind": "steps",
+      "items": ["One counter is a single point of failure", "Give each server a block of IDs", "Cache hot links to protect the database"],
+      "narration": "The trap: one global counter becomes a bottleneck. Give each server its own block of numbers. And since reads dominate, cache the popular links.",
+      "bg": "#2a1016",
+      "accent": "#ff5d73"
+    },
+    {
+      "role": "recap",
+      "sub": "Say this out loud",
+      "headline": "Your answer",
+      "kind": "steps",
+      "items": ["Key-value store", "Counter plus base62", "Cache the reads"],
+      "narration": "Your answer: a key-value store, a counter with base sixty-two, and a cache for reads. Follow for the next interview question.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    }
+  ]
+}
