@@ -1,0 +1,128 @@
+{
+  "title": "Binary Search in under 3 minutes: win the number game every time",
+  "summary": "Binary search explained with a simple number-guessing game, a step-by-step visual of low, mid and high, and the two classic Python mistakes.",
+  "author": "Vinay Mishra",
+  "original_value": "Teaches binary search through a ten-guess number game, then shows low, mid and high moving across an array one step at a time, and ends on the two mistakes beginners really make in Python.",
+  "sources": [
+    "The standard binary search algorithm, as taught in any algorithms textbook",
+    "Python language reference: integer division (//) versus true division (/)"
+  ],
+  "hashtags": ["#binarysearch", "#python", "#dsa", "#codinginterview"],
+  "voice": "Microsoft David Desktop",
+  "rate": 0,
+  "scenes": [
+    {
+      "role": "hook",
+      "chapter": "The number game",
+      "sub": "Can you always win?",
+      "headline": "1 to 1000. Ten guesses.",
+      "narration": "I am thinking of a number between one and one thousand. You get ten guesses, and I will only say higher or lower. Can you win every single time? Yes. And the trick is a tiny algorithm called binary search.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "story",
+      "chapter": "The slow way and the smart way",
+      "sub": "Two ways to play",
+      "headline": "Which player are you?",
+      "kind": "compare",
+      "left": {"title": "Guess in order", "items": ["1, then 2, then 3...", "Worst case: 1000 guesses"]},
+      "right": {"title": "Guess the middle", "items": ["Start at 500", "Worst case: 10 guesses"]},
+      "narration": "Most people guess one, then two, then three. That is linear search, and the worst case is a thousand guesses. The smart player guesses five hundred. Higher or lower, half of the numbers are gone in one move.",
+      "bg": "#141a3a",
+      "accent": "#ff7a59"
+    },
+    {
+      "role": "concept",
+      "chapter": "The idea in four steps",
+      "sub": "The whole algorithm",
+      "headline": "Binary search",
+      "kind": "steps",
+      "items": ["Start with a SORTED list", "Look at the middle item", "Too big? Drop the right half", "Too small? Drop the left half"],
+      "narration": "Here is the entire idea. Start with a sorted list. Look at the middle. If the middle is too big, throw away the right half. If it is too small, throw away the left half. Repeat until you find it.",
+      "bg": "#0e2a2f",
+      "accent": "#5eead4"
+    },
+    {
+      "role": "demo",
+      "chapter": "Watch it find 23",
+      "sub": "Find 23",
+      "headline": "Low, mid, high",
+      "kind": "array",
+      "values": [2, 5, 8, 12, 16, 23, 38, 56, 72, 91],
+      "steps": [
+        {"low": 0, "high": 9, "mid": 4, "note": "16 is smaller than 23, so go right"},
+        {"low": 5, "high": 9, "mid": 7, "note": "56 is bigger than 23, so go left"},
+        {"low": 5, "high": 6, "mid": 5, "note": "23. Found it in three looks"}
+      ],
+      "narration": "Let us find twenty three. The middle is sixteen. Too small, so everything on the left is gone. The new middle is fifty six. Too big, so the right side is gone. Now the middle is twenty three. Found, in three looks instead of six.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "demo",
+      "chapter": "The code",
+      "sub": "In Python",
+      "headline": "Eight lines",
+      "kind": "card",
+      "code": [
+        "def binary_search(nums, target):",
+        "    low, high = 0, len(nums) - 1",
+        "    while low <= high:",
+        "        mid = (low + high) // 2",
+        "        if nums[mid] == target: return mid",
+        "        if nums[mid] < target: low = mid + 1",
+        "        else: high = mid - 1",
+        "    return -1"
+      ],
+      "highlight": [{"line": 3, "at": 0.28}, {"line": 4, "at": 0.45}, {"line": 5, "at": 0.58}, {"line": 6, "at": 0.72}, {"line": 7, "at": 0.88}],
+      "narration": "In code, low and high mark what is still possible. Compute the middle. If it matches, return it. If it is too small, move low past the middle. Otherwise move high below it. If they cross, the number is not there, so return minus one.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "mistake",
+      "chapter": "Two classic mistakes",
+      "sub": "Watch out",
+      "headline": "Where beginners slip",
+      "kind": "compare",
+      "left": {"title": "Mistake", "items": ["Searching an unsorted list", "mid = (low + high) / 2"]},
+      "right": {"title": "Fix", "items": ["Sort first, or just loop through it", "Use // so mid is a whole number"]},
+      "narration": "Two classic mistakes. First, binary search only works on a sorted list. On a messy list it gives wrong answers. Second, in Python a single slash makes a decimal, and a list index cannot be a decimal. Use the double slash.",
+      "bg": "#2a1016",
+      "accent": "#ff5d73"
+    },
+    {
+      "role": "concept",
+      "chapter": "Your turn",
+      "sub": "Pause and think",
+      "headline": "A million numbers?",
+      "narration": "Pause and think. If a list has one million numbers, about how many guesses does binary search need in the worst case?",
+      "hold": 4,
+      "bg": "#141a3a",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "concept",
+      "chapter": "Why it is so fast",
+      "sub": "The answer",
+      "headline": "Halving, again and again",
+      "kind": "steps",
+      "items": ["1,000 numbers left", "500", "250", "125", "...about 10 guesses later: 1"],
+      "narration": "About twenty. Every guess halves what is left. A thousand becomes five hundred, then two fifty, and about ten guesses later, one. Written in big O notation, that is log n. A million items cost only about twenty guesses.",
+      "bg": "#0e2a2f",
+      "accent": "#5eead4"
+    },
+    {
+      "role": "recap",
+      "chapter": "Recap",
+      "sub": "Remember this",
+      "headline": "Four lines to keep",
+      "kind": "steps",
+      "items": ["Sorted list only", "Check the middle", "Throw away half", "About log n guesses"],
+      "narration": "To remember it: a sorted list only, check the middle, throw away half, and the cost is about log n guesses. Next time, we use it to solve a real interview problem.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    }
+  ]
+}

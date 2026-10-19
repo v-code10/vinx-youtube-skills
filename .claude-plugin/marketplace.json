@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vinx-youtube-skills",
+  "description": "YouTube skills for Claude: scripts, packaging, tags that fit Studio's limit, mid-roll auditing and verified Studio edits",
+  "owner": { "name": "Vinx" },
+  "plugins": [
+    {
+      "name": "vinx-youtube-skills",
+      "description": "Nineteen skills for fixing a YouTube channel with verified edits: one-video boost, diagnosis, playlist audit, exact tag counting, mid-roll auditing, an offline-voice explainer video builder and vertical English Shorts.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

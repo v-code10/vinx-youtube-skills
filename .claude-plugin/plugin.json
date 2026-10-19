@@ -1,0 +1,8 @@
+{
+  "name": "vinx-youtube-skills",
+  "description": "Nineteen skills that fix a YouTube channel one verified change at a time: a one-video boost, a numbers-first diagnosis, a playlist audit, tags counted exactly as Studio counts them, mid-roll auditing, a read-back-verified Studio editing procedure and an offline-voice explainer video builder and vertical English Shorts, plus the original hook, packaging, chapter, retention and research skills. Forked from Jake Schincariol's youtube-agent-skill (MIT).",
+  "version": "1.2.0",
+  "author": { "name": "Vinx" },
+  "license": "MIT",
+  "keywords": ["youtube", "shorts", "retention", "thumbnails", "titles", "content", "video", "seo"]
+}

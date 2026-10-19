@@ -1,0 +1,63 @@
+{
+  "title": "What Is a Cache? | System Design Short",
+  "summary": "System design in one minute: what a cache is, cache hit versus cache miss, and how to handle stale data with a TTL.",
+  "author": "Vinay Mishra",
+  "original_value": "Explains caching with an everyday photo-feed example, covers hit and miss in two lines, and gives the two standard fixes for stale data (TTL and invalidation).",
+  "sources": [
+    "Standard caching concepts: cache hit, cache miss, TTL, invalidation (system design textbooks and engineering docs)"
+  ],
+  "hashtags": ["#shorts", "#systemdesign", "#cache", "#codinginterview"],
+  "voice": "Microsoft David Desktop",
+  "rate": 0,
+  "scenes": [
+    {
+      "role": "hook",
+      "sub": "System design",
+      "headline": "What is a cache?",
+      "narration": "If a photo app hit the database on every single view, it would crawl. That is why caches exist.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "concept",
+      "sub": "The flow",
+      "headline": "How a cache works",
+      "kind": "steps",
+      "items": ["Check the cache first", "Found? Return it", "Missing? Ask the database", "Save it in the cache"],
+      "narration": "Check the cache first. Found it? Return it. That is a cache hit. Not there? Ask the database, then save the answer. That is a cache miss.",
+      "bg": "#0e2a2f",
+      "accent": "#5eead4"
+    },
+    {
+      "role": "demo",
+      "sub": "The difference",
+      "headline": "Without vs with",
+      "kind": "compare",
+      "left": {"title": "No cache", "items": ["Every request hits the database", "Slow, heavy load"]},
+      "right": {"title": "With cache", "items": ["Popular data is nearby", "Fast, light load"]},
+      "narration": "Without a cache, every request reaches the database. Slow, and heavy load. With a cache, popular data is kept nearby. Fast, and the database gets a rest.",
+      "bg": "#141a3a",
+      "accent": "#ff7a59"
+    },
+    {
+      "role": "mistake",
+      "sub": "Watch out",
+      "headline": "Stale data",
+      "kind": "steps",
+      "items": ["A cache can serve old data", "Fix: set a TTL, an expiry time", "Or clear the cache on update"],
+      "narration": "The catch: a cache can serve old data, called stale data. Fix it with a TTL, an expiry time, or clear the entry when the data changes.",
+      "bg": "#2a1016",
+      "accent": "#ff5d73"
+    },
+    {
+      "role": "recap",
+      "sub": "Remember",
+      "headline": "That is it",
+      "kind": "steps",
+      "items": ["Cache first", "Miss? Database", "Set a TTL"],
+      "narration": "Cache first. On a miss, go to the database. And always set a TTL. Follow for the next system design topic.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    }
+  ]
+}

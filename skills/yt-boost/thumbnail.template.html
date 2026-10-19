@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /* 1280x720. Designed to stay readable at feed size (about 170px wide): few words, huge type, high contrast. */
+  html, body { margin: 0; width: 1280px; height: 720px; }
+  body {
+    background: {{BG}};
+    font-family: "Segoe UI Black", "Arial Black", Impact, sans-serif;
+    position: relative;
+  }
+  .stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 26px; background: {{ACCENT}}; }
+  .tag {
+    position: absolute; left: 80px; top: 64px;
+    background: {{ACCENT}}; color: {{BG}};
+    font-size: 40px; letter-spacing: 2px; padding: 8px 22px; border-radius: 8px;
+  }
+  .headline {
+    position: absolute; left: 80px; top: 170px; width: {{TEXT_WIDTH}}px;
+    color: #fff; font-size: {{HEADLINE_SIZE}}px; line-height: 0.98; text-transform: uppercase;
+    text-shadow: 0 6px 0 rgba(0,0,0,.35);
+  }
+  .headline em { font-style: normal; color: {{ACCENT}}; }
+  .sub {
+    position: absolute; left: 80px; bottom: 70px;
+    color: #fff; font-size: 46px; opacity: .92;
+  }
+  .face {
+    position: absolute; right: 0; bottom: 0; height: 100%;
+    display: {{FACE_DISPLAY}};
+  }
+  .face img { height: 100%; display: block; }
+</style>
+</head>
+<body>
+  <div class="stripe"></div>
+  <div class="tag">{{TAG}}</div>
+  <div class="headline">{{HEADLINE_HTML}}</div>
+  <div class="sub">{{SUB}}</div>
+  <div class="face"><img src="{{FACE_SRC}}"></div>
+</body>
+</html>

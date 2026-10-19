@@ -1,0 +1,69 @@
+{
+  "title": "Binary Search in 1 Minute | DSA Short",
+  "summary": "Binary search in under a minute: how to find a number between 1 and 1000 in ten guesses, step by step, plus the two mistakes almost everyone makes.",
+  "author": "Vinay Mishra",
+  "original_value": "Explains binary search with a number-guessing game, walks low, mid and high across a real array, and shows two real Python mistakes (unsorted input and / versus //).",
+  "sources": [
+    "Standard binary search algorithm (any algorithms textbook)",
+    "Python language reference: integer division (//) versus true division (/)"
+  ],
+  "hashtags": ["#shorts", "#binarysearch", "#dsa", "#python", "#codinginterview"],
+  "voice": "Microsoft David Desktop",
+  "rate": 0,
+  "scenes": [
+    {
+      "role": "hook",
+      "sub": "The challenge",
+      "headline": "1 to 1000. Ten guesses.",
+      "narration": "Think of any number from one to a thousand. I will find it in ten guesses. Here is how.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "concept",
+      "sub": "The idea",
+      "headline": "The trick",
+      "kind": "steps",
+      "items": ["Start with a sorted list", "Check the middle", "Too big? Drop the right half", "Too small? Drop the left half"],
+      "narration": "The list must be sorted. Check the middle. If it is too big, throw away the right half. Too small, throw away the left half.",
+      "bg": "#0e2a2f",
+      "accent": "#5eead4"
+    },
+    {
+      "role": "demo",
+      "sub": "Watch it work",
+      "headline": "Find 23",
+      "kind": "array",
+      "values": [2, 5, 8, 12, 16, 23, 38, 56, 72, 91],
+      "steps": [
+        {"low": 0, "high": 9, "mid": 4, "note": "16 is too small, go right"},
+        {"low": 5, "high": 9, "mid": 7, "note": "56 is too big, go left"},
+        {"low": 5, "high": 6, "mid": 5, "note": "Found 23 in 3 steps"}
+      ],
+      "narration": "Say we want twenty-three. The middle is sixteen, too small, so go right. Now fifty-six, too big, so go left. Twenty-three. Found in three steps.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    },
+    {
+      "role": "mistake",
+      "sub": "Watch out",
+      "headline": "Two classic mistakes",
+      "kind": "compare",
+      "left": {"title": "Wrong", "items": ["Unsorted list", "mid = (low + high) / 2"]},
+      "right": {"title": "Right", "items": ["Sort it first", "mid = (low + high) // 2"]},
+      "narration": "Two mistakes. Running it on an unsorted list gives wrong answers. And in Python, use double slash for the middle, or you get a decimal.",
+      "bg": "#2a1016",
+      "accent": "#ff5d73"
+    },
+    {
+      "role": "recap",
+      "sub": "Remember",
+      "headline": "That is it",
+      "kind": "steps",
+      "items": ["Each step halves the search", "1,000 items: 10 guesses", "1,000,000 items: 20 guesses"],
+      "narration": "Every step halves the search. A thousand items take ten guesses. A million take twenty. Follow for the next interview question.",
+      "bg": "#0b1020",
+      "accent": "#ffd400"
+    }
+  ]
+}
