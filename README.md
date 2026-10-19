@@ -17,6 +17,33 @@ quietly refused them.
 
 Nothing here publishes a video. The skills write and check; you decide.
 
+## Demo
+
+Every video below was built by `yt-explainer` / `yt-short-explainer` from a small JSON storyboard.
+Click a preview to open the full MP4. The Shorts use the offline Piper voice and are synthetic; the
+landscape example uses the older Windows system voice.
+
+| System design Short: URL shortener | DSA Short: binary search | System design Short: cache |
+|---|---|---|
+| [![URL shortener Short](docs/demo/url-shortener-short.gif)](docs/demo/url-shortener-short.mp4) | [![Binary search Short](docs/demo/binary-search-short.gif)](docs/demo/binary-search-short.mp4) | [![Cache Short](docs/demo/cache-short.gif)](docs/demo/cache-short.mp4) |
+
+Frames from each build (hook, concept, demo, recap):
+
+![URL shortener Short frames](docs/screenshots/url-shortener-short.png)
+![Binary search Short frames](docs/screenshots/binary-search-short.png)
+![Cache Short frames](docs/screenshots/cache-short.png)
+
+Long-form (1280x720, about 2.5 minutes): [![Binary search explainer](docs/demo/binary-search-explainer.gif)](docs/demo/binary-search-explainer.mp4)
+
+![Binary search explainer frames](docs/screenshots/binary-search-explainer.png)
+
+### Tested
+
+Real output from the linter, the tag counter and the builder (storyboard lint, tag count against
+Studio's 500 limit, final build):
+
+![Test output](docs/screenshots/tests-output.png)
+
 ## Quick start
 
 ```bash
